@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Question Page</title>
+   <link rel="stylesheets" href="style.css">
+   <style>
+      .question-container {
+
+      }
+   </style>
+   <script>
+
+      var countdownTimer;
+      var timerInterval;
+      var arrayOfQuestions = [];
+      const maxTime= 5*60;//time is in seconds
+      function setCountDownTimer() {
+         countdownTimer=maxTime;
+      }
+
+      //when the person clicks the beginning the timer starts
+      //start timer
+
+      let timerInterval = setInterval(updateTimer, 1000);
+      function updateTimer() {
+         countdownTimer =countdownTimer - 1;
+
+      }
+      //question is asked
+      function SetupQuestions() {
+         console.log("SetupQuestions started");
+         let question1= {
+            id: "quest0",
+            question:"To select elementswith a specific class",
+            answer1: "write a semicolon(;) character,folloqwed by the class name",
+            answer2: "write a period(.) character,followed by the class name",
+            answer3: "write a period(.) character",
+            answer4: "write a comma(,) character",
+            correctAnswer: 2
+         };
+      };
+      
+
+         let question2= {
+            id: "quest1",
+            question:"In CSS, a colorcan be specified by using a ",
+            answer1: "yes",
+            answer2: "no",
+            answer3: "null",
+            answer4: "null",
+            correctAnswer: 1
+   
+         };
+         {
+         arrayOfQuestions.push(question1);
+         arrayOfQuestions.push(question2);
+
+         console.log("SetupQuestions arrayOfQuestions:", arrayOfQuestions);
+
+      }
+
+      function nextQuestion(index) {
+         for(let i =0;i<arrayOfQuestions.length; i++){
+
+         }
+      }
+
+      function showQuestion(questionIndex) {
+         let question =document.getElementById("question");
+         let newQuestion = document.createElement("div");
+
+         newQuestion.id=arrayOfQuestions[questionIndex].id;
+         newQuestion.innerText=arrayOfQuestions[questionIndex].question;
+         questionSection.appendChild(newQuestion);
+         
+
+      }
+
+
+
+      //if question is correct next question
+      
+      //if question is incorrect penalty
+      //if answer is correct show points and go to next question
+      //once all questiona have been answered give options 
+      //once all questiona have been answered give options to save score
+      //if user chooses to save score show the score board
+
+   </script>
+</head>
+<body>
+   <div class="question-container">
+   <span Style="text-align:left">Time Remaining</span>
+   <span Style="text-align:right">Score</span>
+   </div>
+       
+       <div id="question">
+          <div>Question: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua 
+          
+            <div id="a">A1: Ut enim ad minim veniam, quis nostrud exercitation ullamco </div>
+
+            <div id="b">A2: Duis aute irure dolor </div>
+
+            <div id="c"> A3: Excepteur sint occaecat</div>
+
+            <div id="d">A4: deserunt mollit anim id  </div>
+          </div>
+         </div>
+
+         <div id ="answer1"></div>
+
+         <div id ="answer---2"></div>
+
+         <div id ="answer3"></div>
+
+         <div id ="answer4"></div>
+       </div>
+   
+   
+   <div>
+      <p>Question: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua 
+      </p>
+   </div>
+
+
+</body>
+</html>
