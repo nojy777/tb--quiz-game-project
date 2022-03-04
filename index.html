@@ -5,52 +5,54 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Quiz Game</title>
-   <link rel="stylesheet" href="style.css">
-   </head>
-   <style>
-      .welcome {
-         border: 1px solid black;
-         font-family: Verdana, Geneva, Tahoma, sans-serif;
-         box-sizing: content-box;
-         height: 250px;
-         width: 250px;
-         margin: auto;
-         
-         text-align: center;
-         position: relative;
-
-         
-      
-        
-         
-         
-         
-      }
-      .center {
-         display: flex;
-         justify-content: center;
-         align-items:center ;
-         flex-direction: column;
-
-      }
-      p {
-         padding: 20px;
-      }
-      .btnBegin {
-         padding:20px 30px ;
-
-      }
-   </style>
+   
+   
+   
+  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="./index.js"></script>
+</head>
    
 <body>
-   <div id="main center">
-   <div class="welcome center">
+   <div id="score-board" class="row0">
+      <div class="column">Seconds Remaining: <span id="timer"></span></div>
+      <div class="column">Score: <span id="score"></span></div>
+  </div>
+  <div id="second" class="row1">
 
-      <p>Test your front end development skills by answering the following questions</p>
-      <button id="btnBegin"onclick="doSomething();">Begin</button>
-      <!--<form> buttonaction=""></form>
-      <a href="questions.html"></a>
-      <button id="btnBegin" onclick="doSomething()">Begin </button>
-   </div>
-   </div>
-</body></html>
+      <div id="questions" class="questions">
+  <div id="titleSection" class="left">Quiz</div>
+  <div id="game-board" class="middle row">
+      <div id="welcome" class="">
+          <div>
+              <span>Test your front end developer skills by answering the following questions.</span>
+          </div>
+          <div>
+              <button id="start-quiz" onclick="doGame();">Begin</button>
+          </div>
+      </div>
+      <br />
+      <div id="questions" class="questions hide">
+      </div>
+      <div id="enterHighScore" class="hide">
+          <div>Save Your Score</div>
+          <label for="tbInitials">Enter your Initials</label>
+          <input type="text" id="tbInitials" placeholder="Initials here">
+          <button id="bEnterHighScore" onclick="addScore();">Submit</button>
+      </div>
+      <div id="high-scores" class="hide">
+          <div>High Scores</div>
+      </div>
+
+  </div>
+  <div id="score-board" class="hide">
+      <div id="timerContainer" class="">Seconds Remaining: <span id="timer"></span></div>
+      <div id="scoreContainer" class="">Score: <span id="score"></span></div>
+  </div>
+   
+</body>
+<script>
+   doGame();
+</script>
+
+</html>
